@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/sdurgalaxmi/Capstone-Project_team2.git
+    repoURL: https://github.com/sdurgalaxmi/php_app.git
     targetRevision: HEAD
     path: templates
   destination: 
