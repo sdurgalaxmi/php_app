@@ -176,9 +176,9 @@ oc get is -n team3 --selector role=builder
   Create your ownm repository
   ***************************
   
-  oc new-app https://github.com/gopih2022/openshiftS2i.git
+  oc new-app https://github.com/sdurgalaxmi/capstone_openshift.git
   
-  oc new-app httpd:2.4~https://github.com/gopih2022/openshiftS2i.git
+  oc new-app httpd:2.4~https://github.com/sdurgalaxmi/capstone_openshift.git
   
   
    oc delete namespace openshift-operators-redhat
