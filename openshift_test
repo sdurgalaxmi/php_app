@@ -1,0 +1,40 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  name: demo-php-pg-app
+spec:
+  replicas: 1
+  selector:
+    app: demo-php-pg-app
+  template:
+    metadata:
+      labels:
+        app: demo-php-pg-app
+    spec:
+      containers:
+      - name: demo-php-pg-app-con
+        image: sdurgalaxmi/php-pg-docker-app:latest
+        ports:
+        - containerPort: 8080  # Change to your app's port
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-php-pg-service
+spec:
+  selector:
+    app: demo-php-pg-app
+  ports:
+  - port: 8080
+    targetPort: 8080
+
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: demo-php-pg-app-route
+spec:
+  to:
+    kind: Service
+    name: demo-php-pg-service
+
